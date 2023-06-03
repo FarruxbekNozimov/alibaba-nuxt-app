@@ -9,7 +9,7 @@ export default defineNuxtConfig({
 	modules: ["@nuxtjs/tailwindcss"],
 	app: {
 		head: {
-			title: "Leksika UZ",
+			title: "Store",
 			link: [
 				{
 					rel: "stylesheet",
@@ -17,7 +17,7 @@ export default defineNuxtConfig({
 				},
 				{
 					rel: "icon",
-					href: "/logo.png",
+					href: "/logo-icon.png",
 				},
 			],
 			meta: [

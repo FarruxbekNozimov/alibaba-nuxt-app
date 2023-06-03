@@ -1,10 +1,13 @@
 <template>
-	<div>
-		<Header />
-		<main class="min-h-screen bg-[#F1F4F6] pt-[75px]">
-			<slot />
-		</main>
-		<Footer />
+	<div class="cont">
+		<div class="bg-[#F7FAFC]">
+			<Header />
+			<HeaderBottom />
+			<main class="min-h-screen lg:px-20">
+				<slot />
+			</main>
+			<Footer />
+		</div>
 	</div>
 </template>
 
@@ -14,4 +17,8 @@ definePageMeta({
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.cont {
+	
+}
+</style>
