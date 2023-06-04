@@ -55,6 +55,17 @@
 			<img src="/google-play.png" alt="" class="mt-2" />
 		</div>
 	</footer>
+	<footer
+		class="bg-gray-200 flex items-center justify-between px-20 py-5 text-[#606060]">
+		<p>© 2023 Ecommerce.</p>
+		<select
+			id="countries"
+			class="bg-gray-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2 cursor-pointer text-slate-900 outline-none">
+			<option>🇺🇸 English</option>
+			<option>🇺🇿 Uzbek</option>
+			<option>🇷🇺 Russian</option>
+		</select>
+	</footer>
 </template>
 
 <style lang="scss" scoped></style>

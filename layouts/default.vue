@@ -6,6 +6,7 @@
 			<main class="min-h-screen lg:px-20">
 				<slot />
 			</main>
+			<FooterTop />
 			<Footer />
 		</div>
 	</div>

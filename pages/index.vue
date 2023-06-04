@@ -1,8 +1,10 @@
 <script setup>
 import { deals } from "@/public/products/products";
 import { menuTrending } from "@/public/js/menuTrending";
+import { regions } from "@/public/js/supliers";
 import { homeOutdoor } from "@/public/home-outdoor/home-outdoor";
 import { consumer } from "@/public/consumer/consumer";
+import { extraService } from "@/public/extraService/extraService";
 </script>
 <template>
 	<div class="py-5">
@@ -101,19 +103,19 @@ import { consumer } from "@/public/consumer/consumer";
 		<section class="rounded-lg w-full py-5">
 			<h2 class="text-2xl font-bold mb-5">Our extra services</h2>
 			<div class="grid grid-cols-4 grid-rows-1 gap-5">
-				<div
-					class="shadow hover:shadow-lg cursor-pointer rounded-lg relative duration-150">
-					<img
-						src="/extraService/1.png"
-						alt=""
-						class="bg-black rounded-t-md w-full" />
-					<i
-						class="bx bx-search-alt-2 bg-[#D1E7FF] text-xl p-2 px-3 absolute right-7 top-24 rounded-full"></i>
-					<p class="p-3 py-5 w-[200px]">Source from Industry Hubs</p>
-				</div>
+				<ExtraServiceItem v-for="el in extraService" :data="el" />
 			</div>
 		</section>
 		<!-- EXTRA SERVICE SECTION END -->
+
+		<!-- SUPLIERS REGION SECTION START -->
+		<section class="rounded-lg w-full py-5">
+			<h2 class="text-2xl font-bold mb-7">Supliers by region</h2>
+			<div class="grid grid-cols-5 gap-5">
+				<SupliersItem v-for="el in regions" :data="el" />
+			</div>
+		</section>
+		<!-- SUPLIERS REGION SECTION END -->
 	</div>
 </template>
 
