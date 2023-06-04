@@ -3,7 +3,7 @@ const navLinks = [
 	{ path: "profile", title: "Profile", icon: "bx bxs-user" },
 	{ path: "message", title: "Message", icon: "bx bxs-chat" },
 	{ path: "orders", title: "Orders", icon: "bx bxs-heart" },
-	{ path: "my-cart", title: "My cart", icon: "bx bxs-cart" },
+	{ path: "cart", title: "My cart", icon: "bx bxs-cart" },
 ];
 const topFilter = ref(false);
 const currentCategory = ref("All Category");
@@ -65,7 +65,10 @@ const categories = ref([
 						id="mobile-menu-2">
 						<div
 							class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-							<nuxt-link v-for="el in navLinks" class="text-center">
+							<nuxt-link
+								v-for="el in navLinks"
+								:to="el.path"
+								class="text-center">
 								<i :class="el.icon" class="text-2xl text-gray-500"></i>
 								<span
 									href="#"
