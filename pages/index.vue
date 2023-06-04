@@ -1,17 +1,8 @@
 <script setup>
 import { deals } from "@/public/products/products";
 import { menuTrending } from "@/public/js/menuTrending";
-
-const day = ref(new Date().getDay());
-const hour = ref(new Date().getHours());
-const min = ref(new Date().getMinutes());
-const sec = ref(new Date().getSeconds());
-setInterval(() => {
-	day.value = new Date().getDay();
-	hour.value = new Date().getHours();
-	min.value = new Date().getMinutes();
-	sec.value = new Date().getSeconds();
-}, 1000);
+import { homeOutdoor } from "@/public/home-outdoor/home-outdoor";
+import { consumer } from "@/public/consumer/consumer";
 </script>
 <template>
 	<div class="py-5">
@@ -76,64 +67,53 @@ setInterval(() => {
 					<h2 class="text-xl font-bold">Deals and offers</h2>
 					<span class="text-gray-500">Hygiene equipments</span>
 				</div>
-				<div class="lg:mt-5 flex gap-2">
-					<div
-						class="hidden lg:block bg-[#606060]/50 lg:bg-[#606060] h-[55px] w-[55px] text-center py-1 text-center rounded-md">
-						<span class="block text-white">{{
-							day.toString().padStart(2, "0")
-						}}</span>
-						<span class="text-sm text-white">Days</span>
-					</div>
-					<div
-						class="bg-[#606060]/50 lg:bg-[#606060] h-[55px] w-[55px] text-center py-1 text-center rounded-md">
-						<span class="block text-white">{{
-							hour.toString().padStart(2, "0")
-						}}</span>
-						<span class="text-sm text-white">Hour</span>
-					</div>
-					<div
-						class="bg-[#606060]/50 lg:bg-[#606060] h-[55px] w-[55px] text-center py-1 text-center rounded-md">
-						<span class="block text-white">{{
-							min.toString().padStart(2, "0")
-						}}</span>
-						<span class="text-sm text-white">Min</span>
-					</div>
-					<div
-						class="bg-[#606060]/50 lg:bg-[#606060] h-[55px] w-[55px] text-center py-1 text-center rounded-md">
-						<span class="block text-white">{{
-							sec.toString().padStart(2, "0")
-						}}</span>
-						<span class="text-sm text-white">Sec</span>
-					</div>
-				</div>
+				<Time />
 			</div>
 			<CardDeal v-for="el in deals" :data="el" />
 		</section>
 		<!-- DEALS AND OFFERS SECTION END -->
 
 		<!-- HOME AND OUTDOOR SECTION START -->
-		<section
-			class="lg:mt-5 bg-white border lg:h-[240px] rounded-lg shadow flex w-full">
-			<div
-				class="bg-[url('/home.png')] bg-cover flex justify-between lg:justify-center lg:block w-full lg:w-[26%] p-4">
-				<h2 class="text-xl font-bold">
-					Home and <br />
-					outdoor
-				</h2>
-				<button class="bg-white mt-3 px-3 py-2 rounded-lg">Source now</button>
-			</div>
-			<div class="grid grid-cols-4 grid-rows-2 w-[75%]">
-				<HomeOutdoor />
-				<HomeOutdoor />
-				<HomeOutdoor />
-				<HomeOutdoor />
-				<HomeOutdoor />
-				<HomeOutdoor />
-				<HomeOutdoor />
-				<HomeOutdoor />
+		<CardWrapper
+			img="banner.png"
+			title="Home and outdoor"
+			:data="homeOutdoor"
+			folder="home-outdoor" />
+		<!-- HOME AND OUTDOOR SECTION END -->
+
+		<!-- CONSUMER & GADGETS SECTION START -->
+		<CardWrapper
+			img="banner2.png"
+			title="Consumer electronics and gadgets"
+			:data="consumer"
+			folder="consumer" />
+		<!-- CONSUMER & GADGETS SECTION END -->
+
+		<!-- SEND REQUEST SECTION START -->
+		<SendRequest />
+		<!-- SEND REQUEST SECTION END -->
+
+		<!-- RECOMENDED SECTION START -->
+		<Recomended />
+		<!-- RECOMENDED SECTION END -->
+
+		<!-- EXTRA SERVICE SECTION START -->
+		<section class="rounded-lg w-full py-5">
+			<h2 class="text-2xl font-bold mb-5">Our extra services</h2>
+			<div class="grid grid-cols-4 grid-rows-1 gap-5">
+				<div
+					class="shadow hover:shadow-lg cursor-pointer rounded-lg relative duration-150">
+					<img
+						src="/extraService/1.png"
+						alt=""
+						class="bg-black rounded-t-md w-full" />
+					<i
+						class="bx bx-search-alt-2 bg-[#D1E7FF] text-xl p-2 px-3 absolute right-7 top-24 rounded-full"></i>
+					<p class="p-3 py-5 w-[200px]">Source from Industry Hubs</p>
+				</div>
 			</div>
 		</section>
-		<!-- HOME AND OUTDOOR SECTION END -->
+		<!-- EXTRA SERVICE SECTION END -->
 	</div>
 </template>
 

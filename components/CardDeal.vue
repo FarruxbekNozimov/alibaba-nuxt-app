@@ -4,7 +4,7 @@ const { data } = defineProps(["data"]);
 
 <template>
 	<div
-		class="h-[235px] w-[180px] text-center border-l border-gray-200 bg-white p-3">
+		class="cursor-pointer h-[235px] w-[180px] text-center border-l border-gray-200 bg-white p-3">
 		<img
 			:src="`/products/${data.img}`"
 			alt=""
