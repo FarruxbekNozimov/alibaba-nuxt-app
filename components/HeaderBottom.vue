@@ -65,7 +65,7 @@ const topNavLinks = [
 						<select
 							id="countries"
 							class="bg-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2 cursor-pointer text-slate-900 outline-none">
-							<option>Ship to 🇺🇿</option>
+							<option>Ship to 🇧🇷</option>
 							<option>Ship to 🇩🇪</option>
 							<option>Ship to 🇷🇺</option>
 							<option>Ship to 🏴󠁧󠁢󠁥󠁮󠁧󠁿</option>

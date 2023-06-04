@@ -21,8 +21,8 @@ const categories = ref([
 				class="bg-white border-gray-200 py-3 px-20 border-b border-[#E0E0E0]">
 				<div
 					class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-					<a href="https://flowbite.com" class="flex items-center">
-						<img src="logo.png" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+					<a href="/" class="flex items-center">
+						<img src="/logo.png" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
 					</a>
 					<div class="relative flex w-[50%]">
 						<input
