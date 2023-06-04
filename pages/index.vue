@@ -1,26 +1,22 @@
 <script setup>
 import { deals } from "@/public/products/products";
-const menuTrending = [
-	"Automobiles",
-	"Clothes and wear",
-	"Home interiors",
-	"Computer and tech",
-	"Tools, equipments",
-	"Sports and outdoor",
-	"Animal and pets",
-	"Machinery tools",
-	"More category",
-];
-const time = reactive({
-	day: "4",
-	hour: "13",
-	min: "34",
-	sec: "56",
-});
+import { menuTrending } from "@/public/js/menuTrending";
+
+const day = ref(new Date().getDay());
+const hour = ref(new Date().getHours());
+const min = ref(new Date().getMinutes());
+const sec = ref(new Date().getSeconds());
+setInterval(() => {
+	day.value = new Date().getDay();
+	hour.value = new Date().getHours();
+	min.value = new Date().getMinutes();
+	sec.value = new Date().getSeconds();
+}, 1000);
 </script>
 <template>
 	<div class="py-5">
-		<div
+		<!-- LATEST TRENDING SECTION START -->
+		<section
 			class="bg-white border h-[180px] lg:h-[400px] rounded-lg shadow flex lg:p-3 gap-2 overflow-y-hidden w-full">
 			<ul class="hidden lg:block w-[25%] h-full">
 				<li
@@ -68,11 +64,14 @@ const time = reactive({
 					</h2>
 				</div>
 			</div>
-		</div>
-		<div
+		</section>
+		<!-- LATEST TRENDING SECTION END -->
+
+		<!-- DEALS AND OFFERS SECTION START -->
+		<section
 			class="lg:mt-5 bg-white border lg:h-[240px] rounded-lg shadow flex gap-2 overflow-y-hidden w-full">
 			<div
-				class="flex justify-between lg:justify-center lg:block w-full lg:w-[25%] p-3">
+				class="flex justify-between lg:justify-center lg:block w-full lg:w-[25%] p-3 mr-4">
 				<div class="">
 					<h2 class="text-xl font-bold">Deals and offers</h2>
 					<span class="text-gray-500">Hygiene equipments</span>
@@ -81,35 +80,60 @@ const time = reactive({
 					<div
 						class="hidden lg:block bg-[#606060]/50 lg:bg-[#606060] h-[55px] w-[55px] text-center py-1 text-center rounded-md">
 						<span class="block text-white">{{
-							time.day.padStart(2, "0")
+							day.toString().padStart(2, "0")
 						}}</span>
 						<span class="text-sm text-white">Days</span>
 					</div>
 					<div
 						class="bg-[#606060]/50 lg:bg-[#606060] h-[55px] w-[55px] text-center py-1 text-center rounded-md">
 						<span class="block text-white">{{
-							time.hour.padStart(2, "0")
+							hour.toString().padStart(2, "0")
 						}}</span>
 						<span class="text-sm text-white">Hour</span>
 					</div>
 					<div
 						class="bg-[#606060]/50 lg:bg-[#606060] h-[55px] w-[55px] text-center py-1 text-center rounded-md">
 						<span class="block text-white">{{
-							time.min.padStart(2, "0")
+							min.toString().padStart(2, "0")
 						}}</span>
 						<span class="text-sm text-white">Min</span>
 					</div>
 					<div
 						class="bg-[#606060]/50 lg:bg-[#606060] h-[55px] w-[55px] text-center py-1 text-center rounded-md">
 						<span class="block text-white">{{
-							time.sec.padStart(2, "0")
+							sec.toString().padStart(2, "0")
 						}}</span>
 						<span class="text-sm text-white">Sec</span>
 					</div>
 				</div>
 			</div>
 			<CardDeal v-for="el in deals" :data="el" />
-		</div>
+		</section>
+		<!-- DEALS AND OFFERS SECTION END -->
+
+		<!-- HOME AND OUTDOOR SECTION START -->
+		<section
+			class="lg:mt-5 bg-white border lg:h-[240px] rounded-lg shadow flex w-full">
+			<div
+				class="bg-[url('/home.png')] bg-cover flex justify-between lg:justify-center lg:block w-full lg:w-[26%] p-4">
+				<h2 class="text-xl font-bold">
+					Home and <br />
+					outdoor
+				</h2>
+				<button class="bg-white mt-3 px-3 py-2 rounded-lg">Source now</button>
+			</div>
+			<div class="grid grid-cols-4 grid-rows-2 w-[75%]">
+				<HomeOutdoor />
+				<HomeOutdoor />
+				<HomeOutdoor />
+				<HomeOutdoor />
+				<HomeOutdoor />
+				<HomeOutdoor />
+				<HomeOutdoor />
+				<HomeOutdoor />
+			</div>
+		</section>
+		<!-- HOME AND OUTDOOR SECTION END -->
 	</div>
 </template>
 

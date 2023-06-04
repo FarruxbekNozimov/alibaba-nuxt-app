@@ -17,8 +17,4 @@ definePageMeta({
 });
 </script>
 
-<style scoped>
-.cont {
-	
-}
-</style>
+<style scoped></style>
