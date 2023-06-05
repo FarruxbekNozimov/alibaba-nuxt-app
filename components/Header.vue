@@ -1,4 +1,5 @@
 <script setup>
+const { search } = defineProps(["search"]);
 const navLinks = [
 	{ path: "/profile", title: "Profile", icon: "bx bxs-user", show: true },
 	{ path: "/message", title: "Message", icon: "bx bxs-chat", show: false },
@@ -24,7 +25,9 @@ const categories = ref([
 					<a href="/" class="flex items-center">
 						<img src="/logo.png" class="mr-3 sm:h-10" alt="Flowbite Logo" />
 					</a>
-					<div class="relative lg:flex w-full lg:w-[50%]">
+					<div
+						class="relative w-full lg:w-[50%]"
+						:class="search == false ? 'hidden' : 'lg:flex'">
 						<input
 							type="search"
 							id="location-search"
@@ -61,7 +64,7 @@ const categories = ref([
 						</button>
 					</div>
 					<div
-						class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-3"
+						class="justify-between items-center w-full lg:flex lg:w-auto lg:order-3"
 						id="mobile-menu-2">
 						<div
 							class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
