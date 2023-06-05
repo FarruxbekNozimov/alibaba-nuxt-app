@@ -76,19 +76,41 @@ import { extraService } from "@/public/extraService/extraService";
 		<!-- DEALS AND OFFERS SECTION END -->
 
 		<!-- HOME AND OUTDOOR SECTION START -->
-		<CardWrapper
-			img="banner.png"
-			title="Home and outdoor"
-			:data="homeOutdoor"
-			folder="home-outdoor" />
+
+		<section
+			class="lg:mt-5 bg-white border lg:h-[240px] rounded-lg shadow lg:flex w-full">
+			<div
+				:class="`bg-[url('/home.png')] `"
+				class="bg-cover flex justify-between lg:justify-center lg:block w-full lg:w-[26%] p-4">
+				<h2 class="text-xl font-bold w-[150px]">{{ "Home and outdoor" }}</h2>
+				<button class="bg-white mt-3 px-4 py-2 rounded-lg">Source now</button>
+			</div>
+			<div
+				class="overflow-x-auto grid grid-cols-4 grid-rows-1 lg:grid-rows-2 lg:w-[75%]">
+				<CardSmallItem
+					v-for="el in homeOutdoor"
+					:info="el"
+					folder="home-outdoor" />
+			</div>
+		</section>
 		<!-- HOME AND OUTDOOR SECTION END -->
 
 		<!-- CONSUMER & GADGETS SECTION START -->
-		<CardWrapper
-			img="banner2.png"
-			title="Consumer electronics and gadgets"
-			:data="consumer"
-			folder="consumer" />
+		<section
+			class="lg:mt-5 bg-white border lg:h-[240px] rounded-lg shadow lg:flex w-full">
+			<div
+				:class="`bg-[url('/banner2.png')] `"
+				class="bg-cover flex justify-between lg:justify-center lg:block w-full lg:w-[26%] p-4">
+				<h2 class="text-xl font-bold w-[150px]">
+					Consumer electronics and gadgets
+				</h2>
+				<button class="bg-white mt-3 px-4 py-2 rounded-lg">Source now</button>
+			</div>
+			<div
+				class="overflow-x-auto grid grid-cols-4 grid-rows-1 lg:grid-rows-2 lg:w-[75%]">
+				<CardSmallItem v-for="el in consumer" :info="el" folder="consumer" />
+			</div>
+		</section>
 		<!-- CONSUMER & GADGETS SECTION END -->
 
 		<!-- SEND REQUEST SECTION START -->

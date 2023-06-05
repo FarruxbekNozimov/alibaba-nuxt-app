@@ -1,9 +1,9 @@
 <script setup>
 const navLinks = [
-	{ path: "profile", title: "Profile", icon: "bx bxs-user" },
-	{ path: "message", title: "Message", icon: "bx bxs-chat" },
-	{ path: "orders", title: "Orders", icon: "bx bxs-heart" },
-	{ path: "cart", title: "My cart", icon: "bx bxs-cart" },
+	{ path: "profile", title: "Profile", icon: "bx bxs-user", show: true },
+	{ path: "message", title: "Message", icon: "bx bxs-chat", show: false },
+	{ path: "orders", title: "Orders", icon: "bx bxs-heart", show: false },
+	{ path: "cart", title: "My cart", icon: "bx bxs-cart", show: true },
 ];
 const topFilter = ref(false);
 const currentCategory = ref("All Category");
@@ -18,21 +18,21 @@ const categories = ref([
 	<div>
 		<header>
 			<nav
-				class="bg-white border-gray-200 py-3 px-20 border-b border-[#E0E0E0]">
+				class="bg-white border-gray-200 py-3 lg:px-20 sm:px-5 border-b border-[#E0E0E0] px-3">
 				<div
-					class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+					class="lg:flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
 					<a href="/" class="flex items-center">
-						<img src="/logo.png" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+						<img src="/logo.png" class="mr-3 sm:h-10" alt="Flowbite Logo" />
 					</a>
-					<div class="relative flex w-[50%]">
+					<div class="relative lg:flex w-full lg:w-[50%]">
 						<input
 							type="search"
 							id="location-search"
-							class="p-2.5 w-full z-20 text-sm text-gray-900 rounded-l-lg border-[#0D6EFD] border-2 border-r-0 outline-none"
+							class="p-2.5 w-full z-20 text-sm text-gray-900 rounded-l-lg lg:border-[#0D6EFD] border-2 lg:border-r-0 outline-none"
 							placeholder="Search"
 							required />
 						<button
-							class="flex-shrink-0 z-10 inline-flex items-center justify-between px-4 text-sm font-medium text-center border-2 border-[#0D6EFD] hover:bg-gray-200 outline-none gap-2 w-44"
+							class="hidden flex-shrink-0 z-10 lg:inline-flex items-center justify-between px-4 text-sm font-medium text-center border-2 border-[#0D6EFD] hover:bg-gray-200 outline-none gap-2 w-44"
 							type="button"
 							@click="() => (topFilter = !topFilter)">
 							{{ currentCategory }}
@@ -56,7 +56,7 @@ const categories = ref([
 						</div>
 						<button
 							type="submit"
-							class="p-2.5 px-5 text-sm font-medium text-white bg-[#127FFF] rounded-r-lg">
+							class="hidden lg:block p-2.5 px-5 text-sm font-medium text-white bg-[#127FFF] rounded-r-lg">
 							<span class="">Search</span>
 						</button>
 					</div>
