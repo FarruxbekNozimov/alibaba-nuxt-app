@@ -1,9 +1,9 @@
 <script setup>
 const navLinks = [
-	{ path: "profile", title: "Profile", icon: "bx bxs-user", show: true },
-	{ path: "message", title: "Message", icon: "bx bxs-chat", show: false },
-	{ path: "orders", title: "Orders", icon: "bx bxs-heart", show: false },
-	{ path: "cart", title: "My cart", icon: "bx bxs-cart", show: true },
+	{ path: "/profile", title: "Profile", icon: "bx bxs-user", show: true },
+	{ path: "/message", title: "Message", icon: "bx bxs-chat", show: false },
+	{ path: "/orders", title: "Orders", icon: "bx bxs-heart", show: false },
+	{ path: "/cart", title: "My cart", icon: "bx bxs-cart", show: true },
 ];
 const topFilter = ref(false);
 const currentCategory = ref("All Category");
